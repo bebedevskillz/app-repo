@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Get refID</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/base64.js"></script>
+	<script src="js/validator.js"></script>
+</head>
+	<body>
+		<div class="page">
+
+			<div class="encodeData">
+				<div class="wrapper">
+					<div class="encodeData__content">
+						<div class="encodeData__fields">
+							<input class='fields__input' type='text' id='first-name' name='first-name' placeholder="имя"/>
+							<input class='fields__input' type='text' id='last-name' name='last-name' placeholder="фамилия"/>
+							<input class='fields__input' type='tel' id='phone' name='telnumber' placeholder="телефон"/> 
+							<span>формате номера: 89997773322</span>
+						</div>
+						<div class="encodeData__button">
+							<a href="#" id='getLink'>Получить линк</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="display" style="display: block;"> 
+				<div class="resultData">
+					<div class="wrapper">
+						<div class="resultData__content">
+							<div class="resultData__field">
+								<textarea rows='5' type='text' id='fullUri' name='url'></textarea>
+							</div>
+							<div class="resultData__buttons">
+								<a href="#" id="copyBtn" data-clipboard-target="#fullUri">Скопировать линк</a>
+								<a href="#" id="decodeBtn">Декодировать линк</a>
+							</div>
+							<div class="resultData__paragraph">
+								<span id='fName'></span>
+								<span id="lName"></span>
+								<span id="phoneNumber"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+		<script src="js/getparams.js"></script>
+		<script src="js/decode.js"></script>
+		<script src="js/encode.js"></script>
+	</body>
+</html>
