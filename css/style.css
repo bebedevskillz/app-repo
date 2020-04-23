@@ -9,12 +9,12 @@
 /* ------------------------------------ */
 body {
     font-family:'Roboto', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     background-color: #FFFFFF;
 }
 
 .page {
-    max-width: 900px;
+    max-width: 500px;
     margin: 50px auto;
     text-align: center;
 }
@@ -22,11 +22,12 @@ body {
 .wrapper { 
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 100%;
     background: #CBE86B;
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 30px 0;
+    box-shadow: 0px 0px 5px 1px green;
 }
 
 .encodeData { 
@@ -65,7 +66,7 @@ body {
 }
 
 .encodeData__button {
-    padding: 20px 0 10px 0;
+    padding: 10px 0 10px 0;
 }
 
 .encodeData__button a { 
@@ -74,7 +75,8 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     color: #ffffff;
-    background: #E94E77;
+    background: #F56991;
+    display: inherit;
 }
 
 .resultData { 
@@ -111,7 +113,7 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     color: #ffffff;
-    background: #E94E77;
+    background: #F56991;
 }
 
 .resultData__paragraph { 
@@ -125,13 +127,13 @@ body {
 .fields__input:focus,
 .resultData__field textarea:focus {
     outline: none;
-    box-shadow: 0 0 5px 0px #E94E77;
+    box-shadow: 0 0 5px 0px #FD3D63;
 }
 
 .encodeData__button a:hover,
 .resultData__buttons a:hover {
-    background: #ffffff;
-    color: #E94E77;
+    background: #FD3D63;
+    color: #ffffff;
     transition: 0.3s;
 }
 
