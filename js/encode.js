@@ -14,8 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let testEmpty = isEmpty(firstName, lastName, tel)
         let testValidNumber = testTel(tel)
+        let testTextInputs = testTextFields(firstName, lastName)
         
-        if (testEmpty && testValidNumber == true) {
+        if (testEmpty && testValidNumber && testTextInputs == true) {
 
             let infoArray = new Map([ 
                 ['n', firstName],

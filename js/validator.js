@@ -19,3 +19,19 @@ function testTel(tel) {
     } else return true
 }
 
+function testTextFields(firstName, lastName) {
+
+    let nameTest = /^[а-яА-ЯёЁa-zA-Z]+$/.test(firstName)
+
+    if (nameTest === false) {
+        alert('Введены некорректные символы')
+        return false
+    } else {
+        let nameTest = /^[а-яА-ЯёЁa-zA-Z]+$/.test(lastName)
+
+        if (nameTest === false) {
+            alert('Введены некорректные символы')
+            return false
+        } else return true
+    }
+}
