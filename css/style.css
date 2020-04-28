@@ -13,6 +13,10 @@ body {
     background-color: #FFFFFF;
 }
 
+h1 {
+    margin-bottom: 50px;
+}
+
 .page {
     max-width: 500px;
     margin: 50px auto;
@@ -36,8 +40,6 @@ body {
     justify-content: center;
 }
 
-.encodeData__content { }
-
 .encodeData__fields { 
     display: flex;
     flex-direction: column;
@@ -47,7 +49,8 @@ body {
     align-self: center;
     font-size: 14px;
     font-weight: 500;
-    color: #ffffff;
+    color: #8fa34b;
+    margin-top: 5px;
 }
 
 .fields__input { 
@@ -66,7 +69,7 @@ body {
 }
 
 .encodeData__button {
-    padding: 10px 0 10px 0; 
+    margin-top: 15px; 
 }
 
 .fields__input:focus::placeholder {
@@ -93,8 +96,6 @@ body {
 .resultData .wrapper {
     margin-bottom: 0;
 }
-
-.resultData__content { }
 
 .resultData__field {
     margin-bottom: 30px;
@@ -126,7 +127,7 @@ body {
     font-size: 18px;
     font-weight: 500;
     line-height: 1.3;
-    color: #ffffff;
+    color: #8fa34b;
 }
 
 .fields__input:focus,
