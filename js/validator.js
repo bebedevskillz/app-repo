@@ -1,5 +1,5 @@
 'use strict'
-//функции для проверки инпут филдов
+//функции для проверки инпут
 
 function isEmpty(firstName, lastName, tel) {
     

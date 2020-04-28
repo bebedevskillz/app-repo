@@ -2,9 +2,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    let getButton = document.querySelector('#getLink')		        // кнопка "Получить ссылку"
-    let getResult = document.querySelector('#fullUri')         		// окно с результатом
-    let resultDiv = document.querySelector('.display')        // 
+    let getButton = document.querySelector('#getLink')		        
+    let getResult = document.querySelector('#fullUri')         		
+    let resultDiv = document.querySelector('.display')        
 
     function getInputs() {
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function encodeRefID(a) {
 
-        let data = a.toString() 		                        // переводим данные из аргумента в формат строки
+        let data = a.toString() 		                        
         let refID = encodeURIComponent(Base64.encode(data))    // делаем base64 энкод данных и энкодим спецсимволы в полученной строке ещё раз, чтобы не было знаков =, ?, & и т.д.
         encodedUri = `${window.location.href}?refID=${refID}`
     }
@@ -45,12 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         encodeRefID(inputData)
 
         resultDiv.style.display = 'block'
-        // decodeInfo.style.display = 'block'
         getResult.value = encodedUri
     }
 
-    function clipBoardCopy() { 		
+    (function clipBoardCopy() { 		
 		new ClipboardJS ('#copyBtn')
-    }
-		clipBoardCopy()
+    })()
 })
