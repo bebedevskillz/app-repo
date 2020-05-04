@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    let getButton = document.querySelector('#getLink')		        
+    let getButton = document.querySelector('#getLink')		       
     let getResult = document.querySelector('#fullUri')         		
     let resultDiv = document.querySelector('.display')        
 
@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let tel = document.getElementById('phone').value
 
         let testEmpty = isEmpty(firstName, lastName, tel)
-        let testValidNumber = testTel(tel)
         let testTextInputs = testTextFields(firstName, lastName)
-        
-        if (testEmpty && testValidNumber && testTextInputs == true) {
+        let testValidNumber = testTel(tel)
+      
+        if (testEmpty && testTextInputs && testValidNumber === true) {
 
             let infoArray = new Map([ 
                 ['n', firstName],
@@ -49,6 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     (function clipBoardCopy() { 		
-		new ClipboardJS ('#copyBtn')
+		new ClipboardJS('#copyBtn')
     })()
 })
