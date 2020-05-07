@@ -1,5 +1,5 @@
 'use strict'
-//функции для проверки инпут
+//функции для проверки инпут филдов
 
 function isEmpty(firstName, lastName, tel) {
     
@@ -19,19 +19,30 @@ function testTel(tel) {
     } else return true
 }
 
-function testTextFields(firstName, lastName) {
+function symbolsChecker(firstName, lastName) {
 
     let nameTest = /^[а-яА-ЯёЁa-zA-Z]+$/.test(firstName)
 
     if (nameTest === false) {
-        alert('Введены некорректные символы')
+        alert('Введены некорректные символы в поле "Имя"')
         return false
     } else {
         let nameTest = /^[а-яА-ЯёЁa-zA-Z]+$/.test(lastName)
 
         if (nameTest === false) {
-            alert('Введены некорректные символы')
+            alert('Введены некорректные символы в поле "Фамилия"')
             return false
         } else return true
     }
+}
+
+function nameLengthChecker(firstName, lastName) {
+	
+    if (firstName.length < 2) {
+        alert ('Вы ввели слишком короткое имя')
+        return false
+    } else if (lastName.length < 2) {
+        alert ('Вы ввели слишком короткую фамилию')
+        return false
+    } else return true
 }

@@ -12,11 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let lastName = document.getElementById('last-name').value
         let tel = document.getElementById('phone').value
 
-        let testEmpty = isEmpty(firstName, lastName, tel)
-        let testTextInputs = testTextFields(firstName, lastName)
+        let testEmptyFields = isEmpty(firstName, lastName, tel)
+        let testTextInput = symbolsChecker(firstName, lastName)
+        let testNameLength = nameLengthChecker(firstName, lastName)
         let testValidNumber = testTel(tel)
       
-        if (testEmpty && testTextInputs && testValidNumber === true) {
+        if (testEmptyFields && testTextInput && testNameLength && testValidNumber === true) {
 
             let infoArray = new Map([ 
                 ['n', firstName],
@@ -24,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['p', tel]
             ])
 
-            let jsonStr = JSON.stringify([...infoArray]) // или JSON.stringify(Array.from(arr)) или JSON.stringify( Array.from( arr.entries() ) )
-            console.log(`json: ${jsonStr}`)
+            let jsonStr = JSON.stringify([...infoArray])
+            // console.log(`json: ${jsonStr}`)
             return jsonStr
         }
     }
