@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // переводим данные в формат строки, энкодим и склеиваем готовую ссылку
         let data = a.toString()
-        // делаем base64 энкод данных и энкодим спецсимволы в полученной строке ещё раз, чтобы не было знаков =, ?, & и т.д.
+        // делаем base64 энкод данных и повторно энкодим встроенными методами, чтобы результат не содержал символов: =, ?, & и т.д.
         let refID = encodeURIComponent(Base64.encode(data))
         encodedUri = `${window.location.href}?refID=${refID}`
     }
