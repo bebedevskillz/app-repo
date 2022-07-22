@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#preconditions
+
+date=`echo $1 | sed 's/\///g'`
+start_time="00:00:01.000000"
+end_time="23:59:59.000000"
+
+#sequence sensitive arrays, be careful when changing
+
+query_names=(
+"dummy1"
+"name2"
+"name3"
+"name4"
+"name5"
+"name6"
+"etc")
+
+queries=(
+"SELECT query1"
+"SELECT query2"
+"SELECT query3"
+"SELECT query4"
+"SELECT query5"
+"SELECT query6"
+"etc"
+)
+
+#logic
+
+if [[ -z $date ]]; then
+   echo "USAGE: $0 YYYYMMDD or YYYY/MM/DD"
+else
+   for index in ${!query_names[*]}
+   do
+	   echo ${query_names[$index]}: $(impala-shell -i hostname:port --ssl -q "${queries[$index]}" --quiet | awk '/[0-9]/{print $2}') >> kudu_consistency_$date.dat 
+     #output format - name: count; hostname and port just deleted, because it's simply hardcoded in this case.
+   done
+fi
