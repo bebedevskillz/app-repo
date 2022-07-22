@@ -1,0 +1,29 @@
+#!/bin/bash
+
+request="
+set pagesize 200
+set linesize 200
+select a looooong query...;
+"
+
+date=`sqlplus db_name <<< "$request" | grep -i RUNNING | awk '{print $2}'`
+
+echo
+echo "$date closing..."
+echo
+echo "Press Enter!"
+read
+
+sleep 5; echo "3..."
+sleep 1; echo "2..."
+sleep 1; echo "1..."
+echo
+
+if [[ -n $date ]]; then
+        time some_script.sh $date
+        echo "Done! Bye! <3"
+	      echo
+else
+        echo "There is no day to close!"
+      	echo
+fi
